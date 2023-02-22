@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 interface ILayout {
@@ -14,7 +15,9 @@ function Layout({ children }: ILayout) {
 			</Head>
 
 			<Header>
-				<Logo src='/logo.svg' alt='Logo' />
+				<Link href='/'>
+					<Logo src='/logo.svg' alt='Logo' />
+				</Link>
 			</Header>
 
 			{children}
