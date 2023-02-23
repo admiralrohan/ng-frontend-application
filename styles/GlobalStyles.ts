@@ -19,6 +19,17 @@ body {
 	margin: 0;
 }
 
+/* Scrollbar styles */
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 6px;
+	box-shadow: rgb(142 142 142) 0px 0px 6px inset;
+}
+
 /* Reset browser default styles */
 ul {
 	list-style-type: none;
