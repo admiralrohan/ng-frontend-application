@@ -16,6 +16,18 @@ const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme }>`
 
 body {
   background-color: ${({ theme }) => theme.colors.black};
+	margin: 0;
+}
+
+/* Reset browser default styles */
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+dl, dd {
+	margin: 0;
 }
 
 `;
