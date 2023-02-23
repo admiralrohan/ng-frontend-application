@@ -1,14 +1,21 @@
-import Head from 'next/head';
+import HomePage from '@components/HomePage';
+import { IHome } from '@interfaces/Pages.interface';
+import axios from 'axios';
+import { GetServerSideProps } from 'next';
 
-export default function Home() {
-	return (
-		<>
-			<Head>
-				<title>Node Guardians</title>
-				<meta name='description' content='Node Guardians frontend' />
-			</Head>
-
-			<main></main>
-		</>
-	);
+function Home({ quests }: IHome) {
+	return <HomePage quests={quests} />;
 }
+
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+	let { host } = req.headers;
+	let result = await axios(`http://${host}/api/quests`);
+
+	return {
+		props: {
+			quests: result.data
+		}
+	};
+};
+
+export default Home;

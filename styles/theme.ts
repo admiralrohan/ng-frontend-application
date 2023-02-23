@@ -1,6 +1,12 @@
 // theme.ts
 import { DefaultTheme } from 'styled-components';
 
+export const BREAKPOINTS = {
+	mobile: 375,
+	tablet: 750,
+	laptop: 1100
+};
+
 export const defaultTheme = {
 	radius: {
 		s: '3px',
@@ -27,6 +33,15 @@ export const defaultTheme = {
 		'6xl': '140px',
 		'7xl': '160px',
 		'8xl': '180px'
+	},
+	queries: {
+		mobileAndSmaller: `(max-width: ${BREAKPOINTS.mobile / 16}rem)`,
+		tabletAndSmaller: `(max-width: ${BREAKPOINTS.tablet / 16}rem)`,
+		laptopAndSmaller: `(max-width: ${BREAKPOINTS.laptop / 16}rem)`
+	},
+	extras: {
+		/** To dynamically generate media query value, as CSS variables can't be used inside media query. Want to have source of truth for the card structure. */
+		homeCardWidth: 355
 	}
 };
 
@@ -37,6 +52,7 @@ export const darkTheme: DefaultTheme = {
 		gold: '#BEA77E',
 		white: '#FFFFF4',
 		grey: '#8E8E8E',
+		lightGrey: '#3A3A3A',
 		darkGrey: '#333030',
 		lighterBlack: '#1D1C1A',
 		black: '#151515',
