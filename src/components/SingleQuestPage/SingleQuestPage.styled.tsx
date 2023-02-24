@@ -142,24 +142,3 @@ export const QuestRewardBox = styled.div`
 `;
 
 export const FooterRightSection = styled.div``;
-export const GoBackLink = styled(Link)`
-	color: white;
-	background-color: ${({ theme }) => theme.colors.lighterBlack};
-	border: 0.6px solid ${({ theme }) => theme.colors.gold};
-	border-radius: ${({ theme }) => theme.radius.s};
-	text-transform: capitalize;
-	text-decoration: none;
-
-	display: block; /* To make the padding work properly */
-	padding: ${({ theme }) => theme.spacing['4xs']} ${({ theme }) => theme.spacing['2xs']};
-
-	&:hover,
-	&:focus {
-		/* Need visual cues for user when the element is highlighted */
-		color: ${({ theme }) => theme.colors.gold};
-	}
-
-	@media (prefers-reduced-motion: no-preference) {
-		transition: color 500ms;
-	}
-`;

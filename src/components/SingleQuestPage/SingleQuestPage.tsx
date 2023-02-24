@@ -16,14 +16,14 @@ import {
 	CrossIcon,
 	CrossIconWrapper,
 	QuestRewardBox,
-	QuestRewardsTitle,
-	GoBackLink
+	QuestRewardsTitle
 } from './SingleQuestPage.styled';
 import { TitleDecorationLeftArrow, TitleDecorationRightArrow } from '@components/TitleDecoration';
 import { ISingleQuest } from '@interfaces/Pages.interface';
 import Image from 'next/image';
 import React from 'react';
 import HideOnTablet from '@components/HideOnTablet';
+import LinkButton from '@components/LinkButton';
 
 interface IQuestRewards {
 	type: string;
@@ -90,7 +90,7 @@ function SingleQuestPage({ quest }: ISingleQuest) {
 					</FooterLeftSection>
 
 					<FooterRightSection>
-						<GoBackLink href='/'>Go back</GoBackLink>
+						<LinkButton href='/'>Go back</LinkButton>
 					</FooterRightSection>
 				</Footer>
 			</DetailSection>
