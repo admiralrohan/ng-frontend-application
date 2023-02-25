@@ -3,6 +3,7 @@ import Layout from '@components/Layout';
 import GlobalStyle from '@styles/GlobalStyles';
 import { darkTheme } from '@styles/theme';
 import { QueryClient, QueryClientConfig, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
@@ -40,6 +41,8 @@ function App({ Component, pageProps }: AppProps) {
 						</ErrorBoundary>
 					</Layout>
 				</ThemeProvider>
+
+				<ReactQueryDevtools initialIsOpen={false} />
 			</QueryClientProvider>
 		</>
 	);
