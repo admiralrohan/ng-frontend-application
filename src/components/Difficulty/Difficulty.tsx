@@ -12,7 +12,7 @@ function Difficulty({ value }: IDifficulty) {
 	return (
 		<Wrapper>
 			{new Array(MAX_VALUE).fill(null).map((_, i) => {
-				const Component = i < value ? SolidSwordIcon : HollowSwordIcon;
+				const Component = i < Math.floor(value) ? SolidSwordIcon : HollowSwordIcon;
 
 				return <Component key={i} />;
 			})}
