@@ -12,12 +12,12 @@ interface ILinkButton {
  * Component to hold commong styles. Will render Link if `href` is passed otherwise normal button will be rendered.
  */
 function LinkButton({ children, href, ...delegated }: ILinkButton) {
-	return typeof href === 'string' ? (
-		<LinkWrapper href={href} {...delegated}>
+	const Tag: React.ElementType = typeof href === 'string' ? LinkWrapper : ButtonWrapper;
+
+	return (
+		<Tag href={href} {...delegated}>
 			{children}
-		</LinkWrapper>
-	) : (
-		<ButtonWrapper {...delegated}>{children}</ButtonWrapper>
+		</Tag>
 	);
 }
 
