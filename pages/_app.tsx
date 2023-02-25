@@ -1,3 +1,4 @@
+import ErrorBoundary from '@components/ErrorBoundary';
 import Layout from '@components/Layout';
 import GlobalStyle from '@styles/GlobalStyles';
 import { darkTheme } from '@styles/theme';
@@ -34,7 +35,9 @@ function App({ Component, pageProps }: AppProps) {
 					<GlobalStyle />
 
 					<Layout>
-						<Component {...pageProps} />
+						<ErrorBoundary>
+							<Component {...pageProps} />
+						</ErrorBoundary>
 					</Layout>
 				</ThemeProvider>
 			</QueryClientProvider>
