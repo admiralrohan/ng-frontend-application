@@ -7,6 +7,8 @@ interface IDifficulty {
 }
 
 function Difficulty({ value }: IDifficulty) {
+	if (value < 0 || value > MAX_VALUE) throw new Error();
+
 	return (
 		<Wrapper>
 			{new Array(MAX_VALUE).fill(null).map((_, i) => {
