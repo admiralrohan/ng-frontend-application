@@ -14,6 +14,13 @@ export const Wrapper = styled(Link)`
 	/* To make this 'Link' look like usual 'div' */
 	display: block;
 	text-decoration: none;
+
+	transition: background-color 300ms;
+
+	&:hover {
+		background-color: ${({ theme }) => theme.colors.black};
+		transition: background-color 50ms;
+	}
 `;
 
 export const Title = styled.h2`

@@ -28,15 +28,14 @@ const CommonStyle = css`
 	border-radius: ${({ theme }) => theme.radius.s};
 	text-transform: capitalize;
 	padding: ${({ theme }) => theme.spacing['4xs']} ${({ theme }) => theme.spacing['2xs']};
+	transition: color 500ms, background-color 500ms;
 
 	&:hover,
 	&:focus {
 		/* Need visual cues for user when the element is highlighted */
 		color: ${({ theme }) => theme.colors.gold};
-	}
-
-	@media (prefers-reduced-motion: no-preference) {
-		transition: color 500ms;
+		background-color: ${({ theme }) => theme.colors.black};
+		transition: color 150ms, background-color 150ms;
 	}
 `;
 

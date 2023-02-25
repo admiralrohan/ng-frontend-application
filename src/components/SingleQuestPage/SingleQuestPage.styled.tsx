@@ -57,13 +57,11 @@ export const CrossIconWrapper = styled(Link)`
 export const CrossIcon = styled(Image)`
 	/* To fix alignment inside the outline. Useful for keyboard users. */
 	transform: translateX(1px);
+	transition: opacity 500ms;
 
 	&:hover {
 		opacity: 0.5;
-	}
-
-	@media (prefers-reduced-motion: no-preference) {
-		transition: opacity 500ms;
+		transition: opacity 150ms;
 	}
 `;
 
