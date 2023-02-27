@@ -4,12 +4,11 @@ import styled, { css } from 'styled-components';
 
 interface ILinkButton {
 	children: React.ReactNode;
-	href?: string | undefined;
-	delegated?: string[];
+	[otherProp: string]: any;
 }
 
 /**
- * Component to hold commong styles. Will render Link if `href` is passed otherwise normal button will be rendered.
+ * Component to hold common styles. Will render Link if `href` is passed otherwise normal button will be rendered.
  */
 function LinkButton({ children, href, ...delegated }: ILinkButton) {
 	const Tag: React.ElementType = typeof href === 'string' ? LinkWrapper : ButtonWrapper;
