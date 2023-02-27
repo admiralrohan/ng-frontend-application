@@ -1,3 +1,4 @@
+import LinkButton from '@components/LinkButton';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -29,9 +30,7 @@ class ErrorBoundary extends React.Component<Props, State> {
 			return (
 				<Wrapper>
 					<h2>Oops, there is an error!</h2>
-					<button type='button' onClick={() => this.setState({ hasError: false })}>
-						Try again?
-					</button>
+					<LinkButton onClick={() => this.setState({ hasError: false })}>Try again?</LinkButton>
 				</Wrapper>
 			);
 		}
