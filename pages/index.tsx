@@ -1,14 +1,37 @@
-import Head from 'next/head';
+import axios from 'axios';
+import HomePage from '@components/HomePage';
+import { IHome } from '@interfaces/Pages.interface';
+import Quest from '@interfaces/Quest.interface';
+import { useQuery } from '@tanstack/react-query';
+import { GetStaticProps } from 'next';
 
-export default function Home() {
-	return (
-		<>
-			<Head>
-				<title>Node Guardians</title>
-				<meta name='description' content='Node Guardians frontend' />
-			</Head>
+const baseURL = 'http://localhost:3000';
 
-			<main></main>
-		</>
-	);
+export function fetchQuests(): Promise<Quest[]> {
+	return axios(`${baseURL}/api/quests`).then((res) => res.data);
 }
+
+function Home({ quests }: IHome) {
+	const { isLoading, error, data } = useQuery({
+		queryKey: ['quests'],
+		queryFn: fetchQuests,
+		initialData: quests
+	});
+
+	if (isLoading) return 'Loading...';
+	if (error) throw new Error('Data fetching error');
+
+	return <HomePage quests={data} />;
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+	let result = await fetchQuests();
+
+	return {
+		props: {
+			quests: result
+		}
+	};
+};
+
+export default Home;

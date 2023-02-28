@@ -6,6 +6,7 @@ declare module 'styled-components' {
 			s: string;
 			m: string;
 			l: string;
+			xl: string;
 		};
 		spacing: {
 			unset: string;
@@ -31,11 +32,20 @@ declare module 'styled-components' {
 			gold: string;
 			white: string;
 			grey: string;
+			lightGrey: string;
 			darkGrey: string;
 			lighterBlack: string;
 			black: string;
 			blue: string;
 			green: string;
+		};
+		queries: {
+			mobileAndSmaller: string;
+			tabletAndSmaller: string;
+			laptopAndSmaller: string;
+		};
+		extras: {
+			homeCardWidth: number;
 		};
 	}
 }
