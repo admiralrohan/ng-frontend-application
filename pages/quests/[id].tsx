@@ -33,7 +33,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 		params: { id: quest.id.toString() }
 	}));
 
-	return { paths, fallback: true };
+	return { paths, fallback: false };
 };
 
 interface IParams extends ParsedUrlQuery {
