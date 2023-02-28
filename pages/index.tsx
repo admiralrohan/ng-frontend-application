@@ -1,20 +1,13 @@
-import axios from 'axios';
 import HomePage from '@components/HomePage';
 import { IHome } from '@interfaces/Pages.interface';
-import Quest from '@interfaces/Quest.interface';
+import { fetchQuestsFromApi, getAllQuests } from '@services/data.service';
 import { useQuery } from '@tanstack/react-query';
 import { GetStaticProps } from 'next';
-
-const baseURL = 'http://localhost:3000';
-
-export function fetchQuests(): Promise<Quest[]> {
-	return axios(`${baseURL}/api/quests`).then((res) => res.data);
-}
 
 function Home({ quests }: IHome) {
 	const { isLoading, error, data } = useQuery({
 		queryKey: ['quests'],
-		queryFn: fetchQuests,
+		queryFn: fetchQuestsFromApi,
 		initialData: quests
 	});
 
@@ -25,7 +18,7 @@ function Home({ quests }: IHome) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	let result = await fetchQuests();
+	let result = await getAllQuests();
 
 	return {
 		props: {
