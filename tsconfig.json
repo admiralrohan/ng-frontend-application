@@ -19,8 +19,9 @@
 			"@components/*": ["./src/components/*"],
 			"@interfaces/*": ["./src/interfaces/*"],
 			"@fonts/*": ["./src/fonts/*"],
-			"@styles/*": ["./styles/*"],
-			"@services/*": ["./src/services/*"]
+			"@services/*": ["./src/services/*"],
+			"@hooks/*": ["./src/hooks/*"],
+			"@styles/*": ["./styles/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

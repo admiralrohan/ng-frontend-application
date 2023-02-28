@@ -1,7 +1,8 @@
 import Quest from '@interfaces/Quest.interface';
 import axios from 'axios';
 
-const baseURL = 'http://localhost:3000';
+const dev = process.env.NODE_ENV !== 'production';
+export const baseURL = dev ? 'http://localhost:3000' : 'https://ng-frontend-application-roan.vercel.app';
 
 export function fetchQuestsFromApi(): Promise<Quest[]> {
 	return axios(`${baseURL}/api/quests`).then((res) => res.data);
