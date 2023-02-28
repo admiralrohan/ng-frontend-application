@@ -26,5 +26,5 @@ Check `INSTRUCTIONS.md` file for instructions.
 12. React query calls are used from hooks as it's easier to manage unqiue query key and query functions across the codebase.
 
 ## Known issues
-1. Responsive image missing "sizes" prop.
-2. For cypress tests I asserted whether the content is displayed on cards. But can't intercept API requests as they are happening in backend.
+1. Responsive image missing "sizes" prop warning.
+2. For cypress tests I asserted whether the content is displayed on cards. But can't intercept API requests as they are happening in backend. So if API response changes the test will fail.
