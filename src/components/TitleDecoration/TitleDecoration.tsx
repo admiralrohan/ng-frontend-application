@@ -54,3 +54,4 @@ const RotatedImg = styled.div`
 `;
 
 export { TitleDecorationLeftArrow, TitleDecorationRightArrow };
+export default TitleDecoration;
