@@ -23,6 +23,7 @@ Check `INSTRUCTIONS.md` file for instructions.
 	- For mousehover in transition is happening much faster to put attention on the button quickly. Also if user move mouse quickly they will not see the transition properly.
 	- For mousehover out it's happening slowly as user are looking at something else at that moment, better to keep it passive.
 	- When the mouse is pressed: That case ignored here.
+12. React query calls are used from hooks as it's easier to manage unqiue query key and query functions across the codebase.
 
 ## Known issues
 1. Responsive image missing "sizes" prop.

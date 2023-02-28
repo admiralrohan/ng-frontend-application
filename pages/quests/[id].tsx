@@ -1,16 +1,12 @@
 import SingleQuestPage from '@components/SingleQuestPage';
-import { useQuery } from '@tanstack/react-query';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ISingleQuest } from '@interfaces/Pages.interface';
 import { ParsedUrlQuery } from 'querystring';
-import { fetchQuestFromApi, getAllQuests, getQuestById } from '@services/data.service';
+import { getAllQuests, getQuestById } from '@services/data.service';
+import { useQuest } from '@hooks/queries';
 
 function SingleQuest({ quest }: ISingleQuest) {
-	const { isLoading, error, data } = useQuery({
-		queryKey: ['quest', quest.id],
-		queryFn: () => fetchQuestFromApi(quest.id.toString()),
-		initialData: quest
-	});
+	const { isLoading, error, data } = useQuest(quest);
 
 	if (isLoading) return 'Loading...';
 	if (error) throw new Error('Data fetching error');
