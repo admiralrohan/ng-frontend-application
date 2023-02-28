@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ISingleQuest } from '@interfaces/Pages.interface';
 import { ParsedUrlQuery } from 'querystring';
-import { fetchQuestFromApi, getAllQuests, getQuestById } from 'src/services/data.service';
+import { fetchQuestFromApi, getAllQuests, getQuestById } from '@services/data.service';
 
 function SingleQuest({ quest }: ISingleQuest) {
 	const { isLoading, error, data } = useQuery({

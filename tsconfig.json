@@ -20,7 +20,7 @@
 			"@interfaces/*": ["./src/interfaces/*"],
 			"@fonts/*": ["./src/fonts/*"],
 			"@styles/*": ["./styles/*"],
-			"@services/*": ["./services/*"]
+			"@services/*": ["./src/services/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

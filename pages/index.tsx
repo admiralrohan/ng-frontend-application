@@ -1,8 +1,8 @@
 import HomePage from '@components/HomePage';
 import { IHome } from '@interfaces/Pages.interface';
+import { fetchQuestsFromApi, getAllQuests } from '@services/data.service';
 import { useQuery } from '@tanstack/react-query';
 import { GetStaticProps } from 'next';
-import { fetchQuestsFromApi, getAllQuests } from 'src/services/data.service';
 
 function Home({ quests }: IHome) {
 	const { isLoading, error, data } = useQuery({
